@@ -1,24 +1,23 @@
-import java.util.List;
-
 public class LambdaDemo {
     public static void main(String[] args) {
 
-    }
+/*
+      ƛ                    ƛ           ƛ           ƛ    ƛƛƛƛƛƛƛ      ƛƛƛƛƛƛƛƛ              ƛ
+      ƛ                   ƛ ƛ          ƛƛ         ƛƛ    ƛ      ƛ     ƛ       ƛ            ƛ ƛ
+      ƛ                  ƛ   ƛ         ƛ ƛ       ƛ ƛ    ƛ      ƛ     ƛ        ƛ          ƛ   ƛ
+      ƛ                 ƛ     ƛ        ƛ  ƛ     ƛ  ƛ    ƛƛƛƛƛƛƛƛ     ƛ         ƛ        ƛ     ƛ
+      ƛ                ƛƛƛƛƛƛƛƛƛ       ƛ   ƛ   ƛ   ƛ    ƛ       ƛ    ƛ         ƛ       ƛƛƛƛƛƛƛƛƛ
+      ƛ               ƛ         ƛ      ƛ    ƛ ƛ    ƛ    ƛ       ƛ    ƛ        ƛ       ƛ         ƛ
+      ƛ              ƛ           ƛ     ƛ     ƛ     ƛ    ƛ      ƛ     ƛ       ƛ       ƛ           ƛ
+      ƛƛƛƛƛƛƛƛƛƛ    ƛ             ƛ    ƛ           ƛ    ƛƛƛƛƛƛƛ      ƛƛƛƛƛƛƛƛ       ƛ             ƛ
 
-    public static long countGraduateFromChinaByForIteration(List<Graduate> graduates) {
-        int count = 0;
-        for (Graduate graduate : graduates) {
-            if (graduate.region.equals("China")) {
-                count ++;
-            }
-        }
-        return count;
-    }
+      in Java
 
-    public static long countGraduateFromChinaByLambda(List<Graduate> graduates) {
-        return graduates
-                .stream()
-                .filter(graduate -> graduate.region.equals("China"))
-                .count();
+      by Yuexiang Gao
+*/
+        
+        What_Is_Lambda.intro();
+
+        Intro_of_Stream.intro();
     }
 }
