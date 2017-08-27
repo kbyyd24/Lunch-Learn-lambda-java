@@ -1,7 +1,10 @@
 import model.TWer;
 
-import java.util.function.BinaryOperator;
-import java.util.function.Predicate;
+import java.util.List;
+import java.util.function.*;
+import java.util.stream.Collectors;
+
+import static java.util.Collections.emptyList;
 
 public class What_Is_Lambda {
 
@@ -13,7 +16,7 @@ public class What_Is_Lambda {
 
         what_lambda_look_like();
 
-        some_important_interface();
+        some_important_interface(emptyList());
 
     }
 
@@ -77,7 +80,8 @@ public class What_Is_Lambda {
 
     private static void shape_of_arguments() {
 
-        Runnable no_argument = () -> {};
+        Runnable no_argument = () -> {
+        };
 
         Predicate<TWer> one_argument_shape_one = twer -> true;
 
@@ -103,7 +107,7 @@ public class What_Is_Lambda {
         Predicate<TWer> one_line_with_return = twer -> true;
 
         Predicate<TWer> multiple_lines_with_return = twer -> {
-            if(twer.region.equals("China")) {
+            if (twer.region.equals("China")) {
                 return true;
             } else if (twer.office.equals("LA")) {
                 return true;
@@ -113,8 +117,66 @@ public class What_Is_Lambda {
 
     }
 
-    public static void some_important_interface() {
+    public static void some_important_interface(List<TWer> twers) {
+
+        intro_Predicate(twers);
+
+        intro_Consumer(twers);
+
+        intro_Function(twers);
+
+        intro_BinaryOperator(twers);
 
     }
 
+    private static void intro_Predicate(List<TWer> twers) {
+
+        Predicate<TWer> is_from_china = twer -> twer.region.equals("China");
+
+        // example
+        long number_of_twer_from_china = twers.stream()
+                .filter(is_from_china)
+                .count();
+
+    }
+
+    private static void intro_Consumer(List<TWer> twers) {
+
+        Consumer<TWer> print_every_name = twer -> System.out.println(twer.name);
+
+        Consumer<TWer> print_every_name_and_region =
+                print_every_name.andThen(twer -> System.out.println(twer.region));
+
+        twers.forEach(print_every_name_and_region);
+
+    }
+
+    private static void intro_Function(List<TWer> twers) {
+
+        Function<TWer, String> get_all_regions = twer -> twer.region;
+
+        List<String> regions = twers.stream()
+                .map(get_all_regions)
+                .collect(Collectors.toList());
+
+    }
+
+
+    private static void intro_BinaryOperator(List<TWer> twers) {
+
+        BinaryOperator<Integer> add_all_ages = (age1, age2) -> age1 + age2;
+
+        int sumAge = twers.stream()
+                .map(twer -> twer.age)
+                .reduce(0, add_all_ages);
+
+
+        BinaryOperator<TWer> select_youngest_person =
+                (twer1, twer2) ->
+                        twer1.age > twer2.age ? twer2 : twer1;
+
+        TWer youngest_twer = twers.stream()
+                .reduce(new TWer(), select_youngest_person);
+
+    }
 }
