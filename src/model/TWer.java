@@ -1,7 +1,7 @@
 package model;
 
 public class TWer {
-    String name;
-    String region;
-    String office;
+    public String name;
+    public String region;
+    public String office;
 }
