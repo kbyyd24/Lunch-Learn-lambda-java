@@ -28,7 +28,7 @@ public class Intro_of_StreamTest {
                 "Bryant\n" +
                 "Jordan\n" +
                 "James\n" +
-                "counting\n" +
+                "count\n" +
                 "2\n";
         Intro_of_Stream.how_stream_works();
         assertThat(outputStream.toString(), is(output));

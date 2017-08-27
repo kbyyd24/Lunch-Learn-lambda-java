@@ -1,8 +1,8 @@
 import model.TWer;
 
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
+import java.util.function.Consumer;
+import java.util.function.Function;
 import java.util.stream.Stream;
 
 import static java.util.Collections.emptyList;
@@ -17,7 +17,7 @@ public class Intro_of_Stream {
 
         how_stream_works();
 
-        some_options_about_stream();
+        more_options_about_stream(emptyList());
 
     }
 
@@ -72,11 +72,28 @@ public class Intro_of_Stream {
                 .peek(name -> System.out.println(name))
                 .filter(name -> name.length() == 6);
 
-        System.out.println("counting");
+        System.out.println("count");
         System.out.println(nameStream.count());
 
     }
 
-    public static void some_options_about_stream() {}
+    public static void more_options_about_stream(List<TWer> twers) {
+
+        Consumer<TWer> print_every_one = tWer -> System.out.println(true);
+
+        twers.stream()
+                .peek(print_every_one)
+                .close();
+        twers.forEach(print_every_one);
+
+
+        Function<TWer, Integer> getAge = tWer -> tWer.age;
+
+        Optional<Integer> maxAge = twers.stream()
+                .map(getAge)
+                .max((x, y) -> Integer.compare(x, y));
+//              .min((x, y) -> Integer.compare(x, y));
+
+    }
 
 }
