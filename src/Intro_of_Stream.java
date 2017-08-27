@@ -66,7 +66,16 @@ public class Intro_of_Stream {
 
     }
 
-    public static void how_stream_works() {}
+    public static void how_stream_works() {
+
+        Stream<String> nameStream = Stream.of("Bryant", "Jordan", "James")
+                .peek(name -> System.out.println(name))
+                .filter(name -> name.length() == 6);
+
+        System.out.println("counting");
+        System.out.println(nameStream.count());
+
+    }
 
     public static void some_options_about_stream() {}
 
