@@ -14,6 +14,11 @@ public class What_Is_Lambda {
 
     public static void what_is_lambda() {
 
+        String define = "Lambda is an anonymous function";
+
+        String explain = "It's hard to set name for every function, " +
+                "so you don't need to set any name for a lambda function";
+
     }
 
     public static void why_need_lambda() {
