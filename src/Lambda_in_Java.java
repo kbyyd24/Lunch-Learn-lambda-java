@@ -21,5 +21,7 @@ public class Lambda_in_Java {
         Intro_of_Stream.intro();
 
         Lambda_Library.intro();
+
+        Collectors_intro.intro();
     }
 }
