@@ -4,6 +4,7 @@ import model.TWer;
 import java.util.Collection;
 import java.util.DoubleSummaryStatistics;
 import java.util.List;
+import java.util.Optional;
 
 import static java.util.Collections.emptyList;
 
@@ -19,7 +20,7 @@ public class Lambda_Library {
 
         default_method();
 
-        optional_type();
+        optional_type(emptyList());
 
     }
 
@@ -66,6 +67,38 @@ public class Lambda_Library {
 
     }
 
-    public static void optional_type() {}
+    public static void optional_type(List<TWer> tWers) {
+        //use to instead of null
+        Optional<TWer> yuexiang = tWers.stream()
+                .filter(twer -> twer.name.equals("Yuexiang"))
+                .findAny();
+
+//        TWer tWer = new TWer();
+//        if (tWer == null) {
+//            throw new RuntimeException();
+//        }
+
+//        TWer maybeNull = yuexiang.get();
+
+//        if (yuexiang.isPresent()) {
+//            yuexiang.get();
+//        }
+//
+//        TWer yx = yuexiang.get();
+//        if (yx == null) {
+//            throw new RuntimeException();
+//        }
+
+//        TWer tWer = yuexiang.orElse(new TWer());
+
+//        TWer tWer = yuexiang.orElseGet(() -> {
+//            TWer newYuexiang = new TWer();
+//            newYuexiang.name = "Yuexiang";
+//            return newYuexiang;
+//        });
+
+//        yuexiang.orElseThrow(() -> new RuntimeException());
+
+    }
 
 }
