@@ -1,5 +1,6 @@
 import model.TWer;
 
+import java.util.DoubleSummaryStatistics;
 import java.util.List;
 
 import static java.util.Collections.emptyList;
@@ -31,7 +32,19 @@ public class Lambda_Library {
                 .count();
     }
 
-    public static void summaryStatistics_method(List<TWer> twers) {}
+    public static void summaryStatistics_method(List<TWer> twers) {
+        // useful to statistic numbers
+        DoubleSummaryStatistics summaryStatistics = twers.stream()
+                .mapToDouble(twer -> twer.time_in_ThoughtWorks)
+                .summaryStatistics();
+
+        System.out.printf("max: %f, min: %f, ave: %f, sum: %f, count: %d",
+                summaryStatistics.getMax(),
+                summaryStatistics.getMin(),
+                summaryStatistics.getAverage(),
+                summaryStatistics.getSum(),
+                summaryStatistics.getCount());
+    }
 
     // interfaces.Command for example
     public static void functionalInterface_annotation() {}
