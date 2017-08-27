@@ -8,7 +8,7 @@ public class Lambda_Library {
 
     public static void intro() {
 
-        map_to_basic_type();
+        map_to_basic_type(emptyList());
 
         summaryStatistics_method(emptyList());
 
@@ -22,7 +22,14 @@ public class Lambda_Library {
 
     }
 
-    public static void map_to_basic_type() {}
+    public static void map_to_basic_type(List<TWer> tWers) {
+        // Just for performance
+        long count = tWers.stream()
+                .mapToInt(twer -> twer.age)
+                .mapToLong(age -> age)
+                .mapToDouble(age -> age)
+                .count();
+    }
 
     public static void summaryStatistics_method(List<TWer> twers) {}
 
