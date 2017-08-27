@@ -1,4 +1,4 @@
-public class LambdaDemo {
+public class Lambda_in_Java {
     public static void main(String[] args) {
 
 /*
