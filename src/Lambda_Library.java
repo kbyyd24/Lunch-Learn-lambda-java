@@ -1,3 +1,4 @@
+import interfaces.Command;
 import model.TWer;
 
 import java.util.DoubleSummaryStatistics;
@@ -47,7 +48,9 @@ public class Lambda_Library {
     }
 
     // interfaces.Command for example
-    public static void functionalInterface_annotation() {}
+    public static void functionalInterface_annotation() {
+        Command showMe = () -> true;
+    }
 
     public static void default_method() {}
 
