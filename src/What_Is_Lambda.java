@@ -16,6 +16,8 @@ public class What_Is_Lambda {
 
         what_lambda_look_like();
 
+        use_value_not_reference();
+
         some_important_interface(emptyList());
 
     }
@@ -115,6 +117,16 @@ public class What_Is_Lambda {
             return false;
         };
 
+    }
+
+    public static void use_value_not_reference() {
+        TWer twer = new TWer();
+
+        Runnable test_lambda = () -> {
+//            twer = new TWer();
+//            twer.name = "Yuexiang";
+            System.out.println(twer);
+        };
     }
 
     public static void some_important_interface(List<TWer> twers) {
