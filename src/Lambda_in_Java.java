@@ -19,5 +19,7 @@ public class Lambda_in_Java {
         What_Is_Lambda.intro();
 
         Intro_of_Stream.intro();
+
+        Lambda_Library.intro();
     }
 }

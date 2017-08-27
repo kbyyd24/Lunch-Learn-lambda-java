@@ -2,7 +2,7 @@ import java.util.List;
 
 public class Lambda_Library {
 
-    public static void agenda() {}
+    public static void intro() {}
 
     public static void map_to_basic_type() {}
 
