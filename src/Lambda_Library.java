@@ -19,8 +19,6 @@ public class Lambda_Library {
 
         default_method();
 
-        static_method_in_interface();
-
         optional_type();
 
     }
@@ -67,8 +65,6 @@ public class Lambda_Library {
         Command showMeAgain = () -> true;
 
     }
-
-    public static void static_method_in_interface() {}
 
     public static void optional_type() {}
 
