@@ -12,7 +12,7 @@ public class Intro_of_Stream {
 
         internal_iteration(emptyList());
 
-        external_iteration();
+        external_iteration(emptyList());
 
         get_stream_from_collection();
 
@@ -56,7 +56,16 @@ public class Intro_of_Stream {
         System.out.println("Need us to control the iteration");
     }
 
-    public static void external_iteration() {}
+    public static void external_iteration(List<TWer> twers) {
+
+        long count = twers.stream()
+                .filter(twer -> twer.region.equals("China"))
+                .count();
+        System.out.println("Count by stream: " + count);
+
+        System.out.println("We don't need to control iteration when we use external iteration");
+
+    }
 
     public static void get_stream_from_collection() {}
 
