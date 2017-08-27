@@ -1,6 +1,7 @@
 import interfaces.Command;
 import model.TWer;
 
+import java.util.Collection;
 import java.util.DoubleSummaryStatistics;
 import java.util.List;
 
@@ -52,7 +53,20 @@ public class Lambda_Library {
         Command showMe = () -> true;
     }
 
-    public static void default_method() {}
+    public static void default_method() {
+
+        String reason = "In order to compatible other libraries";
+        String detail = "Other libraries extend Collection library, " +
+                "without default method in Collection interface, " +
+                "these libraries can't work in Java8";
+
+        Collection<TWer> showMe = emptyList();
+
+        String tips = "default methods ain't non-overriding method";
+
+        Command showMeAgain = () -> true;
+
+    }
 
     public static void static_method_in_interface() {}
 
