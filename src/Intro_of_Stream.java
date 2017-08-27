@@ -3,6 +3,7 @@ import model.TWer;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
+import java.util.stream.Stream;
 
 import static java.util.Collections.emptyList;
 
@@ -13,8 +14,6 @@ public class Intro_of_Stream {
         internal_iteration(emptyList());
 
         external_iteration(emptyList());
-
-        get_stream_from_collection();
 
         how_stream_works();
 
@@ -66,8 +65,6 @@ public class Intro_of_Stream {
         System.out.println("We don't need to control iteration when we use external iteration");
 
     }
-
-    public static void get_stream_from_collection() {}
 
     public static void how_stream_works() {}
 
