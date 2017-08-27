@@ -23,6 +23,29 @@ public class What_Is_Lambda {
 
     public static void why_need_lambda() {
 
+        String think_about = "How do we use anonymous class";
+
+        before_Java_8();
+
+        after_Java_8();
+
+    }
+
+    private static void before_Java_8() {
+
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("other thread");
+            }
+        };
+
+    }
+
+    private static void after_Java_8() {
+
+        Runnable runnable = () -> System.out.println("other thread");
+
     }
 
     public static void what_lambda_look_like() {
