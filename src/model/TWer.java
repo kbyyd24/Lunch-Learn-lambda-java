@@ -18,4 +18,14 @@ public class TWer {
     public TWer() {
     }
 
+    @Override
+    public String toString() {
+        return "TWer{" +
+                "name='" + name + '\'' +
+                ", region='" + region + '\'' +
+                ", office='" + office + '\'' +
+                ", time_in_ThoughtWorks=" + time_in_ThoughtWorks +
+                ", age=" + age +
+                '}';
+    }
 }
