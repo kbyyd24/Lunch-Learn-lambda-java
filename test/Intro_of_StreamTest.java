@@ -36,10 +36,10 @@ public class Intro_of_StreamTest {
 
 
         String output =
-                "Bryant\n" +
-                "Jordan\n" +
-                "James\n" +
                 "count\n" +
+                        "Bryant\n" +
+                        "Jordan\n" +
+                        "James\n" +
                 "2\n";
         assertThat(outputStream.toString(), is(output));
     }

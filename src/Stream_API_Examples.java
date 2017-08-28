@@ -20,8 +20,8 @@ public class Stream_API_Examples {
 
     public static List<TWer> sort_example(Stream<TWer> unorderedTwers) {
         return unorderedTwers
-                .sorted(Comparator.comparing(twer -> twer.name))
-//                .sorted((twer1, twer2) -> twer1.name.compareTo(twer2.name))
+//                .sorted(Comparator.comparing(twer -> twer.name))
+                .sorted((twer1, twer2) -> twer1.name.compareTo(twer2.name))
 //                Comparable interface
                 .collect(Collectors.toList());
     }

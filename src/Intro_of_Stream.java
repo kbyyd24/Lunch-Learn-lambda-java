@@ -24,43 +24,48 @@ public class Intro_of_Stream {
     public static void internal_iteration(List<TWer> twers) {
         //three examples
         //for i iteration
-        int count = 0;
+
+        List<TWer> twersFromChina = emptyList();
         for (int i = 0; i < twers.size(); i++) {
-            if (twers.get(i).region.equals("China")) {
-                count ++;
+            TWer twer = twers.get(i);
+            if (twer.region.equals("China")) {
+                twersFromChina.add(twer);
             }
         }
-        System.out.println("Count by for i iteration: " + count);
+
 
         //use iterator
-        count = 0;
+
+        twersFromChina = emptyList();
         Iterator<TWer> iterator = twers.iterator();
         while (iterator.hasNext()) {
             TWer twer = iterator.next();
             if (twer.region.equals("China")) {
-                count ++;
+                twersFromChina.add(twer);
             }
         }
-        System.out.println("Count by iterator: " + count);
 
         //for iteration
-        count = 0;
+
+        twersFromChina = emptyList();
         for (TWer twer : twers) {
             if (twer.region.equals("China")) {
-                count ++;
+                twersFromChina.add(twer);
             }
         }
-        System.out.println("Count by for iteration: " + count);
+
 
         System.out.println("Need us to control the iteration");
     }
 
     public static void external_iteration(List<TWer> twers) {
 
-        long count = twers.stream()
-                .filter(twer -> twer.region.equals("China"))
-                .count();
-        System.out.println("Count by stream: " + count);
+        List<TWer> twersFromChina = emptyList();
+        twers.forEach(twer -> {
+            if (twer.region.equals("China")) {
+                twersFromChina.add(twer);
+            }
+        });
 
         System.out.println("We don't need to control iteration when we use external iteration");
 
