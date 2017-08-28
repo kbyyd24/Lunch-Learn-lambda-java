@@ -23,6 +23,7 @@ public class Intro_of_StreamTest {
         System.setOut(null);
     }
 
+    @SuppressWarnings("Convert2MethodRef")
     @Test
     public void should_print_names_first() {
 
