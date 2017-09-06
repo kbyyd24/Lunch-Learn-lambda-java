@@ -10,6 +10,18 @@ public class ThoughtWorker implements Comparable {
 
     public double yearsInTW;
 
+    public ThoughtWorker(String name, String region, String office, int age, double yearsInTW) {
+        this.name = name;
+        this.region = region;
+        this.office = office;
+        this.age = age;
+        this.yearsInTW = yearsInTW;
+    }
+
+    public ThoughtWorker() {
+
+    }
+
 
     @Override
     public int compareTo(Object o) {
@@ -21,5 +33,9 @@ public class ThoughtWorker implements Comparable {
         }
         ThoughtWorker other = (ThoughtWorker) o;
         return name.compareTo(other.name);
+    }
+
+    public int getAge() {
+        return age;
     }
 }
