@@ -9,7 +9,7 @@ import java.util.stream.Stream;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
-public class Intro_of_StreamTest {
+public class StreamDemoTest {
 
     private ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
 
@@ -36,18 +36,12 @@ public class Intro_of_StreamTest {
 
 
         String output =
+                "Bryant\n" +
+                "Jordan\n" +
+                "James\n" +
                 "count\n" +
-                        "Bryant\n" +
-                        "Jordan\n" +
-                        "James\n" +
                 "2\n";
         assertThat(outputStream.toString(), is(output));
     }
 
 }
-
-
-
-
-
-// lazy evaluation, won't compute value immediately, only compute value when you need it.
