@@ -9,6 +9,7 @@ public class ThoughtWorker implements Comparable {
     public int age;
 
     public double yearsInTW;
+    public String title;
 
     public ThoughtWorker(String name, String region, String office, int age, double yearsInTW) {
         this.name = name;
