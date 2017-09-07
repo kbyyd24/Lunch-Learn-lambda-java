@@ -70,6 +70,7 @@ public class StreamAPITest {
 
         Integer sumAge = twers.stream()
                 .map(twer -> twer.age)
+//                .reduce(0, (age1, age2) -> age1 + age2);
                 .reduce((age1, age2) -> age1 + age2)
                 .orElse(0);
 
