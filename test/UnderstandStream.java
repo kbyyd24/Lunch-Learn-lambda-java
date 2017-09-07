@@ -9,7 +9,7 @@ import java.util.stream.Stream;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
-public class StreamDemoTest {
+public class UnderstandStream {
 
     private ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
 
