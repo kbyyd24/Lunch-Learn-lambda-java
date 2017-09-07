@@ -27,12 +27,7 @@ public class UnderstandStream {
     @Test
     public void should_print_names_first() {
 
-        Stream<String> nameStream = Stream.of("Bryant", "Jordan", "James")
-                .peek(name -> System.out.println(name))
-                .filter(name -> name.length() == 6);
-
-        System.out.println("count");
-        System.out.println(nameStream.count());
+        streamDemo();
 
 
         String output =
@@ -42,6 +37,33 @@ public class UnderstandStream {
                 "count\n" +
                 "2\n";
         assertThat(outputStream.toString(), is(output));
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @SuppressWarnings("Convert2MethodRef")
+    private void streamDemo() {
+        Stream<String> nameStream = Stream.of("Bryant", "Jordan", "James")
+                .peek(name -> System.out.println(name))
+                .filter(name -> name.length() == 6);
+
+        System.out.println("count");
+        System.out.println(nameStream.count());
     }
 
 }
